@@ -1,7 +1,3 @@
-# Gerando o conteúdo do README.md para o projeto
-
-readme_content = """
-
 # EPLAY 🎮
 
 **EPLAY** é uma aplicação desenvolvida com o objetivo de oferecer uma experiência de navegação e compra de jogos para entusiastas de games. O projeto utiliza tecnologias modernas para criar uma interface amigável e funcional.
