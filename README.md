@@ -43,39 +43,43 @@ Siga os passos abaixo para rodar o projeto localmente:
    ```
 
 2. Instale as dependências:
-
+```bash
 npm install
 
 # ou
 
 yarn install
+```
 
 3. Inicie o servidor de desenvolvimento:
-
+```bash
 npm start
 
 # ou
 
 yarn start
+```
 
 4. Acesse a aplicação no navegador:
-
+```bash
 http://localhost:3000
+```
 
 🧪 Testes
 
 O projeto inclui testes automatizados para garantir a qualidade do código. Para rodar os testes, utilize:
-
+```bash
 npm test
 
 # ou
 
 yarn test
+```
 
 📂 Estrutura do Projeto
 
 Uma visão geral da estrutura de pastas do projeto:
-
+```bash
 EPLAY/
 ├── src/
 │   ├── components/    # Componentes reutilizáveis
@@ -85,7 +89,7 @@ EPLAY/
 │   └── utils/         # Funções utilitárias
 ├── public/            # Arquivos estáticos
 └── README.md          # Documentação do projeto
-
+```
 🤝 Contribuição
 
 Contribuições são bem-vindas! Para contribuir:
