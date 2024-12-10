@@ -2,7 +2,9 @@ import { useParams } from 'react-router-dom'
 import Hero from '../../components/Hero'
 import Section from '../../components/Section'
 
-import zelda from '../../assets/images/zelda.png'
+import Gallery from '../../components/Gallery'
+
+import residentEvil from '../../assets/images/resident.png'
 
 const Product = () => {
   const { id } = useParams()
@@ -36,13 +38,7 @@ const Product = () => {
           <b>Idiomas: </b> O jogo oferece suporte a diversos idiomas.
         </p>
       </Section>
-      <Section title="Galeria" background="black">
-        <ul>
-          <li>
-            <img src={zelda} alt="Imagem do Link" />
-          </li>
-        </ul>
-      </Section>
+      <Gallery name="jogo teste" defaultCover={residentEvil} />
     </>
   )
 }
