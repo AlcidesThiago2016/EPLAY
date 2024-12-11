@@ -21,6 +21,16 @@ export const Imagem = styled.div`
     position: absolute;
     top: 32px;
   }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    content: '';
+  }
 `
 export const Titulo = styled.h2`
   font-size: 36px;
