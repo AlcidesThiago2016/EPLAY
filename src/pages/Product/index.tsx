@@ -25,7 +25,7 @@ const Product = () => {
 
   return (
     <>
-      <Hero />
+      <Hero game={game} />
       <Section title="Sobre o jogo" background="black">
         <p> {game.description}</p>
       </Section>
@@ -39,7 +39,11 @@ const Product = () => {
           {game.details.languages.join(' ,')}
         </p>
       </Section>
-      <Gallery name="jogo teste" defaultCover={residentEvil} />
+      <Gallery
+        name={game.name}
+        defaultCover={game.media.cover}
+        itens={game.media.gallery}
+      />
     </>
   )
 }

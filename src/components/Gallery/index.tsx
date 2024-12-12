@@ -5,7 +5,6 @@ import { Action, Item, Items, Modal, ModalContent } from './styles'
 import zelda from '../../assets/images/zelda.png'
 import play from '../../assets/images/play.png'
 import zoom from '../../assets/images/zoom.png'
-import spiderman from '../../assets/images/banner-homem-aranha.png'
 import fechar from '../../assets/images/fechar.png'
 import { GalleryItem } from '../../pages/Home'
 
@@ -27,13 +26,14 @@ const mock: GalleryItem[] = [
 type Props = {
   defaultCover: string
   name: string
+  itens: GalleryItem[]
 }
 
 interface ModalState extends GalleryItem {
   isVisible: boolean
 }
 
-const Gallery = ({ defaultCover, name }: Props) => {
+const Gallery = ({ defaultCover, name, itens }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     type: 'image',
@@ -62,7 +62,7 @@ const Gallery = ({ defaultCover, name }: Props) => {
     <>
       <Section title="Galeria" background="black">
         <Items>
-          {mock.map((media, index) => (
+          {itens.map((media, index) => (
             <Item
               key={media.url}
               onClick={() => {
