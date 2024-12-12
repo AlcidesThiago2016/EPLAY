@@ -22,7 +22,7 @@ export type Game = {
     system: string
     developer: string
     publisher: string
-    languagues: string[]
+    languages: string[]
   }
   media: {
     thumbnail: string

@@ -5,37 +5,38 @@ import Section from '../../components/Section'
 import Gallery from '../../components/Gallery'
 
 import residentEvil from '../../assets/images/resident.png'
+import { useEffect, useState } from 'react'
+import { Game } from '../Home'
 
 const Product = () => {
   const { id } = useParams()
+
+  const [game, setGame] = useState<Game>()
+
+  useEffect(() => {
+    fetch(`https://fake-api-tau.vercel.app/api/eplay/jogos/${id}`)
+      .then((res) => res.json())
+      .then((res) => setGame(res))
+  }, [id])
+
+  if (!game) {
+    return <h3>Carregando...</h3>
+  }
 
   return (
     <>
       <Hero />
       <Section title="Sobre o jogo" background="black">
-        <p>
-          Hogwarts Legacy é um RPG de ação ambientado no universo mágico de
-          Harry Potter, desenvolvido pela Avalanche Software e publicado pela
-          Warner Bros. Games. O jogo se passa no final do século XIX, antes dos
-          eventos dos livros de J.K. Rowling, permitindo aos jogadores explorar
-          Hogwarts como um estudante da escola de magia. Os jogadores criam seu
-          próprio personagem, participam de aulas, aprendem feitiços, preparam
-          poções e exploram um vasto mundo aberto que inclui áreas icônicas como
-          a Floresta Proibida e Hogsmeade. O enredo envolve mistérios mágicos,
-          criaturas fantásticas e uma conspiração que ameaça o mundo bruxo. Com
-          um forte foco na personalização, no desenvolvimento de habilidades e
-          na escolha de caminhos, Hogwarts Legacy oferece uma experiência
-          imersiva para os fãs da franquia e novos jogadores, destacando-se por
-          sua narrativa envolvente e atenção aos detalhes do universo mágico.
-        </p>
+        <p> {game.description}</p>
       </Section>
       <Section title="Mais Detalhes" background="gray">
         <p>
-          <b>Plataforma:</b> PlayStation 5 <br />
-          <b>Desenvolvedor: </b> Avalanche Software <br />
-          <b>Editora: </b> Portkey Games, subsidiária da Warner Bros.
+          <b>Plataforma:</b> {game.details.system} <br />
+          <b>Desenvolvedor: </b> {game.details.developer} <br />
+          <b>Editora: </b> {game.details.publisher}
           Interactive Entertainment <br />
-          <b>Idiomas: </b> O jogo oferece suporte a diversos idiomas.
+          <b>Idiomas: </b> O jogo oferece suporte a diversos idiomas, incluindo{' '}
+          {game.details.languages.join(' ,')}
         </p>
       </Section>
       <Gallery name="jogo teste" defaultCover={residentEvil} />
