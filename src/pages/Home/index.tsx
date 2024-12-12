@@ -2,11 +2,6 @@ import Banner from '../../components/Banner'
 import ProductList from '../../components/ProductList'
 import { useEffect, useState } from 'react'
 
-import resident from '../../assets/images/resident.png'
-import diablo from '../../assets/images/diablo.png'
-import zelda from '../../assets/images/zelda.png'
-import starwars from '../../assets/images/star_wars.png'
-
 export interface GalleryItem {
   type: 'image' | 'video'
   url: string
