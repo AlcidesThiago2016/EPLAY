@@ -160,7 +160,7 @@ const Checkout = () => {
 
   return (
     <div className="container">
-      {isSuccess ? (
+      {isSuccess && data ? (
         <Card title="Muito obrigado">
           <>
             <p>
@@ -437,7 +437,12 @@ const Checkout = () => {
               </div>
             </>
           </Card>
-          <Button type="submit" title="Clique aqui para finalizar a compra">
+          <Button
+            type="submit"
+            onClick={form.handleSubmit}
+            title="Clique aqui para finalizar a compra"
+            disabled={isLoading}
+          >
             {isLoading ? 'Finalizando compra...' : 'Finalizar compra'}
           </Button>
         </form>
