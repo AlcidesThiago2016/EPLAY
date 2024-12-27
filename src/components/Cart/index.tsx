@@ -6,14 +6,7 @@ import Tag from '../Tag'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
 
-import {
-  CartContainer,
-  CartItem,
-  Overlay,
-  Prices,
-  Quantity,
-  Sidebar
-} from './styles'
+import * as S from './styles'
 import { parseToBrl } from '../../utils'
 
 const Cart = () => {
@@ -36,12 +29,12 @@ const Cart = () => {
   }
 
   return (
-    <CartContainer className={isOpen ? 'is-open' : ''}>
-      <Overlay onClick={closeCart} />
-      <Sidebar>
+    <S.CartContainer className={isOpen ? 'is-open' : ''}>
+      <S.Overlay onClick={closeCart} />
+      <S.Sidebar>
         <ul>
           {items.map((item) => (
-            <CartItem key={item.id}>
+            <S.CartItem key={item.id}>
               <img src={item.media.thumbnail} alt={item.name} />
               <div>
                 <h3>{item.name}</h3>
@@ -50,20 +43,20 @@ const Cart = () => {
                 <span>{parseToBrl(item.prices.current)}</span>
               </div>
               <button onClick={() => removeIten(item.id)} type="button" />
-            </CartItem>
+            </S.CartItem>
           ))}
         </ul>
-        <Quantity>{items.length} jogo(s) no carrinho</Quantity>
-        <Prices>
+        <S.Quantity>{items.length} jogo(s) no carrinho</S.Quantity>
+        <S.Prices>
           {' '}
           Total de {parseToBrl(getTotalPrice())}{' '}
           <span>Em até 6x sem juros</span>
-        </Prices>
+        </S.Prices>
         <Button title="Clique aqui para continuar com a compra" type="button">
           Continuar com a compra
         </Button>
-      </Sidebar>
-    </CartContainer>
+      </S.Sidebar>
+    </S.CartContainer>
   )
 }
 

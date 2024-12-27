@@ -51,7 +51,7 @@ export const Modal = styled.div`
   align-items: center;
   justify-content: center;
 
-  &.visivel {
+  &.is-visible {
     display: flex;
   }
 
