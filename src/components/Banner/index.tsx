@@ -1,16 +1,13 @@
-import { Imagem, Precos, Titulo } from './styles'
-
 import Tag from '../Tag'
 import Button from '../Button'
-import { useEffect, useState } from 'react'
-import { Game } from '../../pages/Home'
 
 import { formataPreco } from '../ProductList'
-
 import { useGetFeaturedGameQuery } from '../../services/api'
 
+import { Imagem, Precos, Titulo } from './styles'
+
 const Banner = () => {
-  const { data: game, isLoading } = useGetFeaturedGameQuery()
+  const { data: game } = useGetFeaturedGameQuery()
 
   if (!game) {
     return <h3>Carregando...</h3>
